@@ -6,7 +6,31 @@
   - `npm run test-palindrome`
 */
 
+function transfrom(str){
+  let answer = "";
+  for(var i = 0; i < str.length; i++){
+    if(str[i] == " " || str[i] == "," || str[i] == "?" || str[i] == "!" || str[i] == "."){
+      continue;
+    }
+    answer += str[i];
+  }
+  return answer;
+}
+
 function isPalindrome(str) {
+  str = str.toLowerCase();
+  var input = transfrom(str);
+
+  console.log(input);
+
+  var left = 0, right = input.length - 1;
+
+  while(left < right){
+    console.log(left, right);
+    if(input[left] != input[right]) return false;
+    left++; right--;
+  } 
+
   return true;
 }
 
